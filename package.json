@@ -10,9 +10,11 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "dayjs": "^1.11.19",
     "next": "16.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "stan-js": "^1.9.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
