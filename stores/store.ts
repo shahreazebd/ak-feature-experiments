@@ -17,8 +17,7 @@ export const { useStore: useWorklogStore, reset: resetWorklogStore } = createSto
     return (
       this.worklogFilter.startDate !== sd ||
       this.worklogFilter.endDate !== ed ||
-      this.worklogFilter.employee_uuid !== "" ||
-      this.worklogFilter.isViewMine !== "all"
+      this.worklogFilter.employee_uuid !== ""
     );
   },
 });
