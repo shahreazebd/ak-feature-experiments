@@ -1,8 +1,9 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { RqProvider } from "./rq-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,8 +40,13 @@ export default function RootLayout({
           <Link href="/filter-reset-stanjs" className="underline">
             Filter Reset StanJs
           </Link>
+          <Link href="/employee-combobox" className="underline">
+            Employee Combobox
+          </Link>
         </nav>
-        <NuqsAdapter>{children}</NuqsAdapter>
+        <RqProvider>
+          <NuqsAdapter>{children}</NuqsAdapter>
+        </RqProvider>
       </body>
     </html>
   );

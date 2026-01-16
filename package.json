@@ -10,12 +10,14 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.90.17",
     "dayjs": "^1.11.19",
     "next": "16.1.1",
     "nuqs": "^2.8.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "stan-js": "^1.9.1"
+    "stan-js": "^1.9.1",
+    "xior": "^0.8.3"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
