@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -28,6 +29,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav className="flex items-center gap-4 p-4 border-b">
+          <Link href="/" className="underline">
+            Home
+          </Link>
+          <Link href="/filter-reset-nuqs" className="underline">
+            Filter Reset Nuqs
+          </Link>
+          <Link href="/filter-reset-stanjs" className="underline">
+            Filter Reset StanJs
+          </Link>
+        </nav>
         <NuqsAdapter>{children}</NuqsAdapter>
       </body>
     </html>
