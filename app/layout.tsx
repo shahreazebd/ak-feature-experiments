@@ -5,7 +5,7 @@ import "./globals.css";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { RqProvider } from "./rq-provider";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +44,9 @@ export default function RootLayout({
           </Link>
           <Link href="/employee-combobox" className="underline">
             Employee Combobox
+          </Link>
+          <Link href="/merged-data-table" className="underline">
+            Merged Data Table
           </Link>
         </nav>
         <RqProvider>

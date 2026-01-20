@@ -10,15 +10,15 @@ export function FilterResetNuqs() {
   return (
     <div>
       <div>
-        {isWorklogFilterDirty && (
-          <button type="button" onClick={() => setWorklogSearchParams(null)}>
-            Reset
-          </button>
-        )}
-      </div>
-
-      <div>
-        <pre>{JSON.stringify(worklogSearchParams, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(worklogSearchParams, null, 2)}</pre> */}
+        <p>employeeUuid: {worklogSearchParams?.employeeUuid}</p>
+        <p>
+          startDate:{" "}
+          {dayjs(worklogSearchParams?.startDate).format("YYYY-MM-DD")}
+        </p>
+        <p>
+          endDate: {dayjs(worklogSearchParams?.endDate).format("YYYY-MM-DD")}
+        </p>
       </div>
 
       <div className="flex gap-2">
@@ -52,6 +52,12 @@ export function FilterResetNuqs() {
         >
           update endDate
         </button>
+
+        {isWorklogFilterDirty && (
+          <button type="button" onClick={() => setWorklogSearchParams(null)}>
+            Reset
+          </button>
+        )}
       </div>
     </div>
   );
