@@ -1,3 +1,9 @@
+import { EmployeeTable } from "./employee-table";
+
 export default function MergedDataTablePage() {
-  return <div>MergedDataTablePage</div>;
+  return (
+    <div>
+      <EmployeeTable />
+    </div>
+  );
 }

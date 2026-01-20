@@ -48,6 +48,10 @@ export default function RootLayout({
           <Link href="/merged-data-table" className="underline">
             Merged Data Table
           </Link>
+
+          <Link href="/employees" className="underline">
+            Employees
+          </Link>
         </nav>
         <RqProvider>
           <NuqsAdapter>{children}</NuqsAdapter>
