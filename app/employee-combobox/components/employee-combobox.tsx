@@ -1,11 +1,11 @@
 "use client";
 
-import { Combobox as BaseCombobox } from "@base-ui/react/combobox";
 import { useMemo } from "react";
 import {
   type EmployeeResult,
   useEmployeeListQuery,
 } from "@/app/employee-combobox/hooks/use-get-employee-list";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Combobox,
   ComboboxContent,
@@ -36,8 +36,6 @@ export function EmployeeCombobox({
       ...(data?.results.map((item) => ({
         value: item.uuid,
         label: `${item.first_name} ${item.last_name}`,
-        // avatar: item.avatar,
-        // designation: item.designation,
         ...item,
       })) || []),
     ];
@@ -59,8 +57,26 @@ export function EmployeeCombobox({
         <ComboboxEmpty>No employees found.</ComboboxEmpty>
         <ComboboxList>
           {(item: (typeof employees)[number]) => (
-            <ComboboxItem key={item.value} value={item}>
-              {item.label}
+            <ComboboxItem key={item.value} value={item} className="py-2.5">
+              <div className="flex items-center gap-2">
+                <Avatar className="size-8">
+                  <AvatarImage src={item.avatar} alt={item.label} />
+                  <AvatarFallback className="text-xs">
+                    {item.first_name?.[0]}
+                    {item.last_name?.[0]}
+                  </AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-sm font-medium leading-none">
+                    {item.label}
+                  </span>
+                  {item.designation && (
+                    <span className="text-muted-foreground text-xs leading-none">
+                      {item.designation}
+                    </span>
+                  )}
+                </div>
+              </div>
             </ComboboxItem>
           )}
         </ComboboxList>
