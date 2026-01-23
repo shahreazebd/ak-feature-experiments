@@ -64,7 +64,7 @@ export function EmployeeForm() {
         )}
       />
 
-      <Field orientation="horizontal">
+      <Field orientation="horizontal" className="mt-4">
         <Button type="button" variant="outline" onClick={() => form.reset()}>
           Reset
         </Button>
