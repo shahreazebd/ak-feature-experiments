@@ -10,7 +10,7 @@ export default function EmployeeComboboxPage() {
   );
 
   return (
-    <div className="p-8">
+    <div className="p-8 max-w-md mx-auto">
       <h1 className="mb-4 text-xl font-bold">Employee Combobox</h1>
 
       <div className="mb-8 space-y-4">
