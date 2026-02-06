@@ -30,8 +30,6 @@ export default function EmployeeComboboxPage() {
         <h2 className="text-lg font-semibold">Form with Combobox</h2>
         <EmployeeForm />
       </div>
-
-      {/* <ComboboxExample /> */}
     </div>
   );
 }

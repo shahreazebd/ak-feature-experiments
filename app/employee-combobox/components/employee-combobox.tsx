@@ -31,15 +31,15 @@ export function EmployeeCombobox({
 }: EmployeeComboboxProps) {
   const { data } = useEmployeeListQuery();
 
-  const employees: EmployeeParams[] = useMemo(() => {
-    return [
-      ...(data?.results.map((item) => ({
+  const employees: EmployeeParams[] = useMemo(
+    () =>
+      data?.results?.map((item) => ({
+        ...item,
         value: item.uuid,
         label: `${item.first_name} ${item.last_name}`,
-        ...item,
-      })) || []),
-    ];
-  }, [data]);
+      })) ?? [],
+    [data],
+  );
 
   const selectedEmployee = useMemo(() => {
     return employees.find((e) => e.value === value) ?? null;
